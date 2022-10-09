@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AnimeJs Timeline Animation</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Anime <span>JS</span></h2>
+            
+            <a href="#" id="btn">Play</a>
+            <img src="mountains_front.png" id="mountains_front">
+            <h6 id="smallText">by Andika Andrianto</h6>
+            
+        </section>
+
+        <script src="anime.min.js"></script>
+        <script>
+            var animation = anime.timeline({
+                autoplay: false
+            });
+
+            animation
+            .add({
+                targets: '#btn',
+                top: '1000px',
+                duration: 200,
+                easing: 'easeInOutSine'
+            })
+
+            .add({
+                targets: '#stars',
+                top: '0px',
+                duration: 1000,
+                easing: 'easeInOutSine'
+            })
+
+            .add({
+                targets: '#moon',
+                top: '20px',
+                duration: 1000,
+                easing: 'easeInOutSine'
+            })
+
+
+
+            .add({
+                targets: '#mountains_behind',
+                bottom: '0px',
+                duration: 900,
+                easing: 'easeInOutSine'
+            })
+
+            
+
+            .add({
+                targets: '#mountains_front',
+                top: '10px',
+                duration: 1000,
+                easing: 'easeInOutSine'
+            })
+
+            .add({
+                targets: '#moon',
+                top: '10px',
+                duration: 1000,
+                easing: 'easeInOutSine'
+            })
+
+            .add({
+                targets: '#smallText',
+                top: '30px',
+                duration: 1000,
+                easing: 'easeInOutSine'
+            })
+
+            
+
+            document.querySelector('#btn').onclick = animation.play;
+        </script>
+    </body>
+</html>
